@@ -58,13 +58,33 @@ class PersistenceService {
                 imageEntity.largeImageURL = dictionary["largeImageURL"] as? String
                 imageEntity.previewURL = dictionary["webformatURL"] as? String
                 imageEntity.user = dictionary["user"] as? String
-            
+                imageEntity.date = DateInfo.shared.dateString()
+                
+                let url = URL(string: dictionary["webformatURL"] as! String)!
+                
+            imageEntity.dataImagePreview = savedDatainCD(url: url)
+                                    
             return imageEntity
         }
         return nil
     }
     
 
+  private func savedDatainCD (url: URL) -> Data? {
+    var dataS: Data?
+        DispatchQueue.global(qos: .utility).async {
+            do {
+                let data = try Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    dataS = data
+                }
+              
+            } catch {
+                
+            }
+        }
+    return dataS
+    }
     
     func saveInCoreDataWith(array: [[String: AnyObject]]) {
 

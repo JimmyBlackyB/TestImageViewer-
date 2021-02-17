@@ -60,7 +60,7 @@ class CollectionViewController: UICollectionViewController {
         fetchedhResultController = FetchResultController().frc()
         let item = fetchedhResultController?.object(at: indexPath.first!)
         let fullImageVC = segue.destination as! FullImageVC
-        fullImageVC.fullImageTap?.dateInfo = item?.user
+        fullImageVC.fullImageTap?.dateInfo = item?.date
         fullImageVC.fullImageTap?.imageFull = item?.largeImageURL
 
     }
@@ -82,10 +82,10 @@ extension CollectionViewController: NSFetchedResultsControllerDelegate {
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.collectionView.endEditing(true)
+        self.collectionView.reloadData()
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
+        self.collectionView.reloadData()
     }
 }

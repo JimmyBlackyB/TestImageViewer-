@@ -17,6 +17,7 @@
 		DC17214625DD3FD500EECA28 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17214525DD3FD500EECA28 /* Extensions.swift */; };
 		DC17215A25DD5DEA00EECA28 /* FullImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17215925DD5DEA00EECA28 /* FullImageVC.swift */; };
 		DC17216025DD5E9600EECA28 /* FullImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17215F25DD5E9600EECA28 /* FullImageModel.swift */; };
+		DC17216625DD960100EECA28 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17216525DD960100EECA28 /* Date.swift */; };
 		DCFCE7BF25DBD3BF002AF56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCE7BE25DBD3BF002AF56D /* AppDelegate.swift */; };
 		DCFCE7C125DBD3BF002AF56D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCE7C025DBD3BF002AF56D /* SceneDelegate.swift */; };
 		DCFCE7C625DBD3BF002AF56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFCE7C425DBD3BF002AF56D /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		DC17214525DD3FD500EECA28 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DC17215925DD5DEA00EECA28 /* FullImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageVC.swift; sourceTree = "<group>"; };
 		DC17215F25DD5E9600EECA28 /* FullImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageModel.swift; sourceTree = "<group>"; };
+		DC17216525DD960100EECA28 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DCFCE7BB25DBD3BF002AF56D /* TestImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFCE7BE25DBD3BF002AF56D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCFCE7C025DBD3BF002AF56D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				DCFCE7E725DBF877002AF56D /* PersistenceService.swift */,
 				DC17212625DCE74800EECA28 /* FetchResultController.swift */,
 				DC17214525DD3FD500EECA28 /* Extensions.swift */,
+				DC17216525DD960100EECA28 /* Date.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				DC17216025DD5E9600EECA28 /* FullImageModel.swift in Sources */,
 				DC17212D25DCEBA800EECA28 /* ViewModel.swift in Sources */,
 				DC17215A25DD5DEA00EECA28 /* FullImageVC.swift in Sources */,
+				DC17216625DD960100EECA28 /* Date.swift in Sources */,
 				DCFCE7E525DBF512002AF56D /* NotificationCenter_Post.swift in Sources */,
 				DCFCE7BF25DBD3BF002AF56D /* AppDelegate.swift in Sources */,
 				DC17212725DCE74800EECA28 /* FetchResultController.swift in Sources */,

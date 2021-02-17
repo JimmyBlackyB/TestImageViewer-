@@ -17,8 +17,7 @@ class AlertWindow {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let reloadAction = UIAlertAction(title: "Попробовать снова", style: .default) { (_) in
             print("Запуск загрузки заново")
-            NetworkManager().getImage { (_) in
-            }
+            NetworkManager().updateCollectionContent()
         }
         let cancel = UIAlertAction(title: "Пропустить", style: .cancel) { (_) in
             print("Пропустить")

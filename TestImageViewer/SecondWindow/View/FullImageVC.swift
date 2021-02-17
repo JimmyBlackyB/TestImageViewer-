@@ -30,14 +30,14 @@ class FullImageVC: UIViewController {
     }
     
     func urlImage () {
-
+    
         guard let url = URL(string: (fullImageTap?.imageFull)!) else {return}
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             do {
                 let data = try Data(contentsOf: url)
-                self.fullImage.image = UIImage(data: data)
+                fullImage.image = UIImage(data: data)
             } catch {
-                
+                fullImage.loadImageUsingCacheWithURLString((fullImageTap?.imageFull)!, placeHolder: #imageLiteral(resourceName: "placeholder"))
             }
         }
     }

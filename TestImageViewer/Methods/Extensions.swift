@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 let imageCache = NSCache<NSString, UIImage>()
 
@@ -15,12 +16,13 @@ extension UIImageView {
 
     func loadImageUsingCacheWithURLString(_ URLString: String, placeHolder: UIImage?) {
         
+    
         self.image = nil
         if let cachedImage = imageCache.object(forKey: NSString(string: URLString)) {
             self.image = cachedImage
             return
         }
-        
+    
         if let url = URL(string: URLString) {
             URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                 
@@ -40,6 +42,12 @@ extension UIImageView {
                 }
             }).resume()
         }
+    }
+}
+
+extension UIImage {
+    var toData: Data? {
+        return pngData()
     }
 }
 
