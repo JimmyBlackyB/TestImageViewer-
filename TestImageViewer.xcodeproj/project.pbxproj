@@ -15,6 +15,9 @@
 		DC17213725DCF4C500EECA28 /* ModelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17213625DCF4C500EECA28 /* ModelImage.swift */; };
 		DC17213C25DD35E000EECA28 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DC17213B25DD35E000EECA28 /* .gitignore */; };
 		DC17214625DD3FD500EECA28 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17214525DD3FD500EECA28 /* Extensions.swift */; };
+		DC17215A25DD5DEA00EECA28 /* FullImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17215925DD5DEA00EECA28 /* FullImageVC.swift */; };
+		DC17215D25DD5E6F00EECA28 /* FullImageVC_Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17215C25DD5E6F00EECA28 /* FullImageVC_Type.swift */; };
+		DC17216025DD5E9600EECA28 /* FullImageVC_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17215F25DD5E9600EECA28 /* FullImageVC_ViewModel.swift */; };
 		DCFCE7BF25DBD3BF002AF56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCE7BE25DBD3BF002AF56D /* AppDelegate.swift */; };
 		DCFCE7C125DBD3BF002AF56D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCE7C025DBD3BF002AF56D /* SceneDelegate.swift */; };
 		DCFCE7C625DBD3BF002AF56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFCE7C425DBD3BF002AF56D /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 		DC17213625DCF4C500EECA28 /* ModelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelImage.swift; sourceTree = "<group>"; };
 		DC17213B25DD35E000EECA28 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DC17214525DD3FD500EECA28 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DC17215925DD5DEA00EECA28 /* FullImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageVC.swift; sourceTree = "<group>"; };
+		DC17215C25DD5E6F00EECA28 /* FullImageVC_Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageVC_Type.swift; sourceTree = "<group>"; };
+		DC17215F25DD5E9600EECA28 /* FullImageVC_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageVC_ViewModel.swift; sourceTree = "<group>"; };
 		DCFCE7BB25DBD3BF002AF56D /* TestImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFCE7BE25DBD3BF002AF56D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCFCE7C025DBD3BF002AF56D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 		DC17214125DD383100EECA28 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DC17215F25DD5E9600EECA28 /* FullImageVC_ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 		DC17214225DD383A00EECA28 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				DC17215C25DD5E6F00EECA28 /* FullImageVC_Type.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 		DC17214325DD384300EECA28 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DC17215925DD5DEA00EECA28 /* FullImageVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,12 +288,15 @@
 				DCFCE7EC25DC077C002AF56D /* CollectionViewController.swift in Sources */,
 				DCFCE7D825DBD436002AF56D /* NetworkManager.swift in Sources */,
 				DC17213025DCECD500EECA28 /* CollectionCellViewModelType.swift in Sources */,
+				DC17216025DD5E9600EECA28 /* FullImageVC_ViewModel.swift in Sources */,
 				DC17212D25DCEBA800EECA28 /* ViewModel.swift in Sources */,
+				DC17215A25DD5DEA00EECA28 /* FullImageVC.swift in Sources */,
 				DCFCE7E525DBF512002AF56D /* NotificationCenter_Post.swift in Sources */,
 				DCFCE7BF25DBD3BF002AF56D /* AppDelegate.swift in Sources */,
 				DC17212725DCE74800EECA28 /* FetchResultController.swift in Sources */,
 				DCFCE7E825DBF877002AF56D /* PersistenceService.swift in Sources */,
 				DC17212A25DCEB3B00EECA28 /* CollectionViewModelType.swift in Sources */,
+				DC17215D25DD5E6F00EECA28 /* FullImageVC_Type.swift in Sources */,
 				DC17214625DD3FD500EECA28 /* Extensions.swift in Sources */,
 				DCFCE7C125DBD3BF002AF56D /* SceneDelegate.swift in Sources */,
 				DC17213725DCF4C500EECA28 /* ModelImage.swift in Sources */,
