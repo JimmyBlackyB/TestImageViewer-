@@ -16,7 +16,7 @@ class PersistenceService {
     
     var context: NSManagedObjectContext {return persistentContainer.viewContext}
    
-    
+   private var fetchedhResultController: NSFetchedResultsController<TestImageViewer>?
     
     // MARK: - Core Data stack
 
@@ -58,28 +58,29 @@ class PersistenceService {
             imageEntity.largeImageURL = dictionary["largeImageURL"] as? String
             imageEntity.previewURL = dictionary["webformatURL"] as? String
             imageEntity.user = dictionary["user"] as? String
+            
             guard let urlPreview = URL(string: dictionary["webformatURL"] as! String) ,
                   let urlLarge = URL(string: dictionary["largeImageURL"] as! String)
             else {return nil}
-            DispatchQueue.global(qos: .background).sync {
+            DispatchQueue.global(qos: .background).async {
                 do {
                 imageEntity.imagePreview = try Data(contentsOf: urlPreview)
                 imageEntity.imageLarge = try Data(contentsOf: urlLarge)
                 } catch {
-                    fatalError()
-                }
             }
+                }
             
-
             return imageEntity
         }
         return nil
     }
     
+
+    
     func saveInCoreDataWith(array: [[String: AnyObject]]) {
-        
-        _ = array.map{self.createPhotoEntityFrom(dictionary: $0)}
-        saveContext()
+
+            _ = array.map{self.createPhotoEntityFrom(dictionary: $0)}
+            saveContext()
     }
     
     

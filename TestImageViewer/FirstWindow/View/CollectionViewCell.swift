@@ -21,20 +21,14 @@ class CollectionViewCell: UICollectionViewCell {
      var viewModel: CollectionCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else {return}
-            userName.text = viewModel.user
-            let data = Data(count: 0)
-            guard let urlPreview = URL(string: viewModel.previewURL!) else {return}
-            if let imagePreview = UIImage(data: viewModel.imagePreview ?? data) {
-                previewImage.image = imagePreview
-            } else {
-                do {
-                    let data = try Data(contentsOf: urlPreview)
-                    previewImage.image = UIImage(data: data)
-                } catch {
-                   
-                } 
+            DispatchQueue.main.async {
+                self.userName.text = viewModel.user
+                if let url = viewModel.previewURL {
+                    self.previewImage.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
+                }
             }
-            
         }
+            
     }
 }
+

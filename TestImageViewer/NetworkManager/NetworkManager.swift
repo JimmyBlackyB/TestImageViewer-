@@ -65,8 +65,7 @@ class NetworkManager: NSObject {
                 persistence.saveInCoreDataWith(array: result!)
             } else {
                 DispatchQueue.main.async {
-                   let alert =  AlertWindow.shared.showAlert(title: "Ошибка", message: "")
-//                    self.present(alert, animated: true, completion: nil)
+                    NotificationCenter_Post.shared.NotificationCenterPost_ErrorLoad()
                 }
             }
         }

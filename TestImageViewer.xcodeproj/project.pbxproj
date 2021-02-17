@@ -14,6 +14,7 @@
 		DC17213325DCEF4100EECA28 /* CollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17213225DCEF4100EECA28 /* CollectionCellViewModel.swift */; };
 		DC17213725DCF4C500EECA28 /* ModelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17213625DCF4C500EECA28 /* ModelImage.swift */; };
 		DC17213C25DD35E000EECA28 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DC17213B25DD35E000EECA28 /* .gitignore */; };
+		DC17214625DD3FD500EECA28 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17214525DD3FD500EECA28 /* Extensions.swift */; };
 		DCFCE7BF25DBD3BF002AF56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCE7BE25DBD3BF002AF56D /* AppDelegate.swift */; };
 		DCFCE7C125DBD3BF002AF56D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCE7C025DBD3BF002AF56D /* SceneDelegate.swift */; };
 		DCFCE7C625DBD3BF002AF56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFCE7C425DBD3BF002AF56D /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		DC17213225DCEF4100EECA28 /* CollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellViewModel.swift; sourceTree = "<group>"; };
 		DC17213625DCF4C500EECA28 /* ModelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelImage.swift; sourceTree = "<group>"; };
 		DC17213B25DD35E000EECA28 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DC17214525DD3FD500EECA28 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DCFCE7BB25DBD3BF002AF56D /* TestImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFCE7BE25DBD3BF002AF56D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCFCE7C025DBD3BF002AF56D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,47 @@
 				DC17213625DCF4C500EECA28 /* ModelImage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DC17213E25DD37F100EECA28 /* FirstWindow */ = {
+			isa = PBXGroup;
+			children = (
+				DC2DC10A25DCE5A00053C7CD /* ViewModel */,
+				DC2DC10925DCE5930053C7CD /* Protocols */,
+				DC2DC10825DCE5880053C7CD /* View */,
+			);
+			path = FirstWindow;
+			sourceTree = "<group>";
+		};
+		DC17214025DD382700EECA28 /* SecondWindow */ = {
+			isa = PBXGroup;
+			children = (
+				DC17214125DD383100EECA28 /* ViewModel */,
+				DC17214225DD383A00EECA28 /* Protocols */,
+				DC17214325DD384300EECA28 /* View */,
+			);
+			path = SecondWindow;
+			sourceTree = "<group>";
+		};
+		DC17214125DD383100EECA28 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DC17214225DD383A00EECA28 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DC17214325DD384300EECA28 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DC2DC10825DCE5880053C7CD /* View */ = {
@@ -120,9 +163,8 @@
 		DCFCE7BD25DBD3BF002AF56D /* TestImageViewer */ = {
 			isa = PBXGroup;
 			children = (
-				DC2DC10A25DCE5A00053C7CD /* ViewModel */,
-				DC2DC10925DCE5930053C7CD /* Protocols */,
-				DC2DC10825DCE5880053C7CD /* View */,
+				DC17214025DD382700EECA28 /* SecondWindow */,
+				DC17213E25DD37F100EECA28 /* FirstWindow */,
 				DCFCE7DF25DBEC8D002AF56D /* Methods */,
 				DC17213525DCF4B100EECA28 /* Model */,
 				DCFCE7D625DBD418002AF56D /* NetworkManager */,
@@ -153,6 +195,7 @@
 				DCFCE7E425DBF512002AF56D /* NotificationCenter_Post.swift */,
 				DCFCE7E725DBF877002AF56D /* PersistenceService.swift */,
 				DC17212625DCE74800EECA28 /* FetchResultController.swift */,
+				DC17214525DD3FD500EECA28 /* Extensions.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -242,6 +285,7 @@
 				DC17212725DCE74800EECA28 /* FetchResultController.swift in Sources */,
 				DCFCE7E825DBF877002AF56D /* PersistenceService.swift in Sources */,
 				DC17212A25DCEB3B00EECA28 /* CollectionViewModelType.swift in Sources */,
+				DC17214625DD3FD500EECA28 /* Extensions.swift in Sources */,
 				DCFCE7C125DBD3BF002AF56D /* SceneDelegate.swift in Sources */,
 				DC17213725DCF4C500EECA28 /* ModelImage.swift in Sources */,
 			);
