@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TestImageViewer" representedClassName="TestImageViewer" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageLarge" optional="YES" attributeType="Binary"/>
+        <attribute name="imagePreview" optional="YES" attributeType="Binary"/>
+        <attribute name="largeImageURL" optional="YES" attributeType="String"/>
+        <attribute name="previewURL" optional="YES" attributeType="String"/>
+        <attribute name="user" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="TestImageViewer" positionX="-63" positionY="-18" width="128" height="119"/>
+    </elements>
 </model>
