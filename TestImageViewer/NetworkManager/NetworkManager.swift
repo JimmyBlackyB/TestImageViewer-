@@ -15,6 +15,8 @@ class NetworkManager: NSObject {
     private let queue = DispatchQueue.main
     private let persistence = PersistenceService.shared
     
+//    Парсинг данных с наблюдателями
+    
     func getImage (completion: @escaping ([[String: AnyObject]]?) -> Void) {
         
         guard let url = URL(string:urlApi) else {return}
@@ -35,7 +37,6 @@ class NetworkManager: NSObject {
                 return
             }
             
-            
             do {
                 if let jsonAnswer = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers]) as? [String : AnyObject] {
                     guard let itemsJsonArray = jsonAnswer["hits"] as? [[String: AnyObject]]  else {
@@ -55,7 +56,8 @@ class NetworkManager: NSObject {
            
         }.resume()
     }
-
+// Метод обновление информации в Core Data
+    
     func updateCollectionContent() {
       
         let service = NetworkManager()

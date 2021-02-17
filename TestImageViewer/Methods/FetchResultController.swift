@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-
+// Чтение CoreData
 class FetchResultController: NSObject {
     
     private let persistence = PersistenceService.shared

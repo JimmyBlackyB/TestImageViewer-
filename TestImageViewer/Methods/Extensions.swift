@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import CoreData
 
+// Реализация сохранения изображений в временный кэш
+
 let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView {
@@ -45,12 +47,5 @@ extension UIImageView {
     }
 }
 
-extension UIImage {
-    var toData: Data? {
-        return pngData()
-    }
-}
-
-    
     
 

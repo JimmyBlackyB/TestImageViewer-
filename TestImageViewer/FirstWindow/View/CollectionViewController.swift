@@ -26,6 +26,7 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        Наблюдатель для вызова алерта
         NotificationCenter.default.addObserver(self, selector: #selector(alertError_Reload), name: NSNotification.Name(rawValue: ObserverName.errorLoad.rawValue), object: nil)
     }
 
@@ -52,7 +53,8 @@ class CollectionViewController: UICollectionViewController {
         return collectionCell
     }
     
-  
+//   Переход через prepare из-за iOS 11
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: segue)
         guard segue.identifier == "FullImage_Seque" else {return}

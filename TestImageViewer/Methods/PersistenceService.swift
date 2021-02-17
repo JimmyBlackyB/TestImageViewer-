@@ -49,7 +49,7 @@ class PersistenceService {
             }
         }
     }
-    
+//   Сохранение данный из апи
     private func createPhotoEntityFrom(dictionary: [String: AnyObject]) -> NSManagedObject? {
         
         if let imageEntity = NSEntityDescription.insertNewObject(forEntityName: "TestImageViewer", into: context) as? TestImageViewer {
@@ -61,7 +61,7 @@ class PersistenceService {
                 imageEntity.date = DateInfo.shared.dateString()
                 
                 let url = URL(string: dictionary["webformatURL"] as! String)!
-                
+           
             imageEntity.dataImagePreview = savedDatainCD(url: url)
                                     
             return imageEntity
@@ -69,10 +69,11 @@ class PersistenceService {
         return nil
     }
     
-
+// Была идея реализации сохранения Data  в CoreData но тогда падает производительность , но решение сохранние локально данных надежнее чем временный кэш, так как NSCache управляется  ОС и может освобождать по необходимости самостоятельно
+    
   private func savedDatainCD (url: URL) -> Data? {
     var dataS: Data?
-        DispatchQueue.global(qos: .utility).async {
+    DispatchQueue.global(qos: .background).async {
             do {
                 let data = try Data(contentsOf: url)
                 DispatchQueue.main.async {
@@ -86,6 +87,7 @@ class PersistenceService {
     return dataS
     }
     
+//    Сохранения массива в Core Data
     func saveInCoreDataWith(array: [[String: AnyObject]]) {
 
             _ = array.map{self.createPhotoEntityFrom(dictionary: $0)}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// Получение даты с устройства
 class DateInfo {
     
     static let shared = DateInfo()
@@ -20,7 +20,7 @@ class DateInfo {
         let month = calendar.component(.month, from: date)
         let year = calendar.component(.year, from: date)
         
-        return "\(day).\(month).\(year)"
+        return "Дата скачивания : \(day).\(month).\(year)"
     }
     
 }
