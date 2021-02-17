@@ -60,6 +60,7 @@
                                 <connections>
                                     <outlet property="previewImage" destination="2PL-5W-UQ2" id="h5d-uf-AE0"/>
                                     <outlet property="userName" destination="Uff-u3-7AB" id="24h-F9-hFj"/>
+                                    <segue destination="vLf-jr-EG5" kind="presentation" identifier="FullImage_Seque" modalPresentationStyle="fullScreen" id="g7v-b2-xtB"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -94,18 +95,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vRw-jC-u1f">
+                                <rect key="frame" x="325" y="44" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AE6-qn-QUu"/>
+                                    <constraint firstAttribute="width" constant="60" id="Oqj-iJ-Zzj"/>
+                                </constraints>
+                                <state key="normal" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="cancelView:" destination="vLf-jr-EG5" eventType="touchUpInside" id="TLu-GV-OiD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aux-Mf-pnb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gLn-sP-7QF" firstAttribute="bottom" secondItem="aux-Mf-pnb" secondAttribute="bottom" id="4Qe-N3-wrN"/>
+                            <constraint firstItem="aux-Mf-pnb" firstAttribute="trailing" secondItem="vRw-jC-u1f" secondAttribute="trailing" constant="29" id="HvH-hm-i2r"/>
                             <constraint firstItem="IT7-KK-BV3" firstAttribute="top" secondItem="yiY-Di-bE2" secondAttribute="top" id="PO6-fN-dmW"/>
                             <constraint firstItem="IT7-KK-BV3" firstAttribute="leading" secondItem="aux-Mf-pnb" secondAttribute="leading" id="Pua-hd-iqz"/>
                             <constraint firstAttribute="bottom" secondItem="IT7-KK-BV3" secondAttribute="bottom" id="bnx-Kv-3X8"/>
                             <constraint firstItem="IT7-KK-BV3" firstAttribute="trailing" secondItem="aux-Mf-pnb" secondAttribute="trailing" id="t9H-8b-ndg"/>
                             <constraint firstItem="gLn-sP-7QF" firstAttribute="leading" secondItem="aux-Mf-pnb" secondAttribute="leading" constant="20" id="uLi-Pf-BfF"/>
+                            <constraint firstItem="vRw-jC-u1f" firstAttribute="top" secondItem="aux-Mf-pnb" secondAttribute="top" id="xFi-5d-7aY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X9h-ZX-nrl"/>
                     <connections>
                         <outlet property="dateImage" destination="gLn-sP-7QF" id="pxt-7t-wD5"/>
                         <outlet property="fullImage" destination="IT7-KK-BV3" id="Rgi-Jy-fcN"/>
@@ -117,6 +132,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="placeholder" width="355" height="266.66665649414062"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

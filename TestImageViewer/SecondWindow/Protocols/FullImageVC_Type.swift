@@ -5,9 +5,14 @@
 //  Created by Сергей Верховский on 17.02.2021.
 //
 
-import Foundation
+import UIKit
 
 
-protocol FullImageVC_Type {
-    
-}
+//protocol FullImageVC_Type {
+//    var imageFull: UIImage? {get}
+//    var dateImageUpload: String? {get}
+//   func fullImageSet() -> UIImage?
+//    func textDate () -> String?
+//    func didSelectImage(forIndexPath indexPath: IndexPath, seque: UIStoryboardSegue)
+//}
+

@@ -15,11 +15,12 @@ class CollectionViewController: UICollectionViewController {
     var fetchedhResultController: NSFetchedResultsController<TestImageViewer>?
     
     private var viewModel: CollectionViewModelType?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ViewModel()
-        fetchedhResultController?.delegate = self
+        
         NetworkManager().updateCollectionContent()
         
     }
@@ -55,30 +56,21 @@ class CollectionViewController: UICollectionViewController {
 
         return collectionCell
     }
-
-}
-
-
-extension CollectionViewController: NSFetchedResultsControllerDelegate {
     
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: segue)
+        guard segue.identifier == "FullImage_Seque" else {return}
+        let indexPath = collectionView.indexPathsForSelectedItems!
+        fetchedhResultController = FetchResultController().frc()
+        let item = fetchedhResultController?.object(at: indexPath.first!)
+        let fullImageVC = segue.destination as! FullImageVC
+        fullImageVC.fullImageTap?.dateInfo = item?.user
+        fullImageVC.fullImageTap?.imageFull = item?.largeImageURL
         
-        switch type {
-        case .insert:
-            self.collectionView.insertItems(at: [newIndexPath!])
-        case .delete:
-            self.collectionView.deleteItems(at: [indexPath!])
-        default:
-            break
-        }
+        
     }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.collectionView.reloadData()
-    }
-    
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.collectionView.reloadData()
-    }
+
 }
+
+
