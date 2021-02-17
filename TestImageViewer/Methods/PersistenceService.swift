@@ -54,21 +54,10 @@ class PersistenceService {
         
         if let imageEntity = NSEntityDescription.insertNewObject(forEntityName: "TestImageViewer", into: context) as? TestImageViewer {
             
-            imageEntity.id = dictionary["id"] as! Int64
-            imageEntity.largeImageURL = dictionary["largeImageURL"] as? String
-            imageEntity.previewURL = dictionary["webformatURL"] as? String
-            imageEntity.user = dictionary["user"] as? String
-            
-            guard let urlPreview = URL(string: dictionary["webformatURL"] as! String) ,
-                  let urlLarge = URL(string: dictionary["largeImageURL"] as! String)
-            else {return nil}
-            DispatchQueue.global(qos: .background).async {
-                do {
-                imageEntity.imagePreview = try Data(contentsOf: urlPreview)
-                imageEntity.imageLarge = try Data(contentsOf: urlLarge)
-                } catch {
-            }
-                }
+                imageEntity.id = dictionary["id"] as! Int64
+                imageEntity.largeImageURL = dictionary["largeImageURL"] as? String
+                imageEntity.previewURL = dictionary["webformatURL"] as? String
+                imageEntity.user = dictionary["user"] as? String
             
             return imageEntity
         }

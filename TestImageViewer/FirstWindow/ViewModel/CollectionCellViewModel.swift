@@ -10,20 +10,17 @@ import Foundation
 
 class CollectionCellViewModel: CollectionCellViewModelType {
     
-    
-   
     var previewURL: String?
     var user: String?
     var largeImageURL: String?
-    var imagePreview: Data?
-    var imageLarge: Data?
+    var id: Int64?
     
     init?(image: TestImageViewer) {
         self.previewURL = image.previewURL
         self.largeImageURL = image.largeImageURL
         self.user = image.user
-        self.imagePreview = image.imagePreview
-        self.imageLarge = image.imageLarge
+        self.id = image.id
+        
     }
     
 }

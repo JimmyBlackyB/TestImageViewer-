@@ -12,6 +12,5 @@ protocol CollectionCellViewModelType {
     var previewURL: String? {get}
     var user: String? {get}
     var largeImageURL: String? {get}
-    var imagePreview: Data? {get}
-    var imageLarge: Data? {get}
+    var id: Int64? {get}
 }
