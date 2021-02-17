@@ -20,9 +20,8 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ViewModel()
-        
+        fetchedhResultController?.delegate = self
         NetworkManager().updateCollectionContent()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,9 +35,6 @@ class CollectionViewController: UICollectionViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-    
-    
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.numberOfSection() ?? 0
@@ -48,7 +44,6 @@ class CollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell_Image", for: indexPath) as? CollectionViewCell
         
         guard let collectionCell = cell , let viewModel = viewModel else {return UICollectionViewCell()}
-
 
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
 
@@ -67,10 +62,30 @@ class CollectionViewController: UICollectionViewController {
         let fullImageVC = segue.destination as! FullImageVC
         fullImageVC.fullImageTap?.dateInfo = item?.user
         fullImageVC.fullImageTap?.imageFull = item?.largeImageURL
-        
-        
+
     }
 
 }
 
-
+extension CollectionViewController: NSFetchedResultsControllerDelegate {
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .insert:
+            self.collectionView.insertItems(at: [newIndexPath!])
+        case .delete:
+            self.collectionView.deleteItems(at: [indexPath!])
+        default:
+            break
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.collectionView.endEditing(true)
+    }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
+    }
+}

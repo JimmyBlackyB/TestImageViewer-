@@ -11,7 +11,6 @@ class FullImageVC: UIViewController {
     
     var fullImageTap = FullImage(dateInfo: "", imageFull: "")
     
-
     @IBOutlet weak var fullImage: UIImageView!
     
     @IBOutlet weak var dateImage: UILabel! {
